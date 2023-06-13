@@ -1,0 +1,39 @@
+.nav {
+  grid-area: n;
+  background-color: bisque;
+}
+
+.item {
+  margin: 5px;
+  padding: 5px;
+  color: grey;
+
+
+}
+
+.item a {
+  color: white;
+
+
+}
+
+.item a.active {
+  color: black;
+  border: solid 1px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper > div {
+  flex: 1 1 1 50px;
+  margin: 1px;
+  padding: 5px;
+  color: black;
+  border: solid 1px;
+  border-radius: 30px;
+}

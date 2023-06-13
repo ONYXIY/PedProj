@@ -1,0 +1,18 @@
+.dialogs{
+display: grid;
+grid-template-columns: 2fr 10fr;
+}
+.dialog{
+    padding: 5px;
+
+}
+.dialog.active{
+    color: white;
+}
+.dialogsItems {
+color: black;
+
+}
+.mess{
+    padding: 10px;
+}
