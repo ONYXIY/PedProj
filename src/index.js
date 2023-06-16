@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { addPost, subs, updateNewPostText } from './redux/State';
-import state from './redux/State';
+import store from './redux/State';
 
 
 
@@ -15,13 +14,13 @@ let rerenderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App State={state} addPost={addPost} updateNewPostText={updateNewPostText} />
+        <App State={state} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>
 
   );
 }
-subs(rerenderEntireTree);
+store.subs(rerenderEntireTree);
 
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
