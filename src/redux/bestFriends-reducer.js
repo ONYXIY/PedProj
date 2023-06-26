@@ -1,4 +1,5 @@
-const bestFriendsReducer = (state, action) => {
+let initialState = {};
+const bestFriendsReducer = (state = initialState, action) => {
    
 return state;
 }

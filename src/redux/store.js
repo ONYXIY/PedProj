@@ -42,8 +42,8 @@ let store = {
   _callSubscriber(state) {
     console.log('StateWork');
   },
-  subs(obs) {
-    this._callSubscriber = obs;
+  subscribe(observer) {
+    this._callSubscriber = observer;
   },
   dispatch(action) {
 
