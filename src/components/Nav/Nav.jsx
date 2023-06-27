@@ -29,9 +29,9 @@ const Nav = (props) =>{
     <div className={classes.item}>
       <NavLink to='Friends' className = { navData => navData.isActive ? classes.active : classes.item }>Friends</NavLink>
     </div>
-    <div>
+    {/* <div>
       <fastFriend friends = {props.state.friends}/>
-    </div>
+    </div> */}
   </nav>
     )
 }
