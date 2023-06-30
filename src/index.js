@@ -24,12 +24,8 @@ let rerenderEntireTree = (state) => {
 
   );
 };
-rerenderEntireTree(store.getState());
+rerenderEntireTree()
 
-store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTree(state)
-});
 
 
 
