@@ -2,6 +2,7 @@ import bestFriendsReducer from "./bestFriends-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 
+
 let store = {
   _state: {
     profilePage: {

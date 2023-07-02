@@ -1,15 +1,11 @@
 const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW'
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'set_users'
 
 
 let initialState = {
-    users: [
-        { id: 1, followed: false, fullName: 'Rustam', status: 'im React pro', iocation: { city: 'Chelyabinsk', country: 'Russia' } },
-        { id: 2, followed: false, fullName: 'John', status: 'im pro player', iocation: { city: 'NY', country: 'USA' } },
-        { id: 3, followed: true, fullName: 'Arina', status: 'twitchTV', iocation: { city: 'Chelyabinsk', country: 'Russia' } }
-    ]
+    users: []
 }
-
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -23,8 +19,6 @@ const usersReducer = (state = initialState, action) => {
                 })
             };
 
-
-
         case UNFOLLOW:
             return {
                 ...state, users: state.users.map(u => {
@@ -34,13 +28,18 @@ const usersReducer = (state = initialState, action) => {
                     return u;
                 })
             };
+        case SET_USERS:
+            return {
+                ...state, users: [...state.users, ...action.users]
+            }
         default:
             return state;
 
     }
-}
+};
 
 export const followAC = (userID) => ({ type: FOLLOW, userID })
 export const unfollowAC = (userID) => ({ type: UNFOLLOW, userID })
+export const setUsersAC =(users) => ({type: SET_USERS, users})
 
 export default usersReducer;
