@@ -7,6 +7,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import { Route, Routes } from 'react-router-dom';
 import News from './components/News';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import Users from './components/Users/Users';
 
 
 
@@ -26,6 +27,8 @@ const App = (props) => {
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/news" element={<News />} />
+            <Route path="/users" element={<Users />} />
+            
           </Routes>
         </div>
       </div>
