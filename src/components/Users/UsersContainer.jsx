@@ -50,7 +50,7 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching
     }
 }
-// let mapDispatchToProps = (dispatch) => {
+// let mapDispatchToProps = (dispatch) => { 
 //     return {
 //         follow: (userID) => {
 //             dispatch(followAC(userID));
