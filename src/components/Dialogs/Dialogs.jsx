@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Mess from './Message/Message';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Dialogs = (props) => {
 
@@ -10,6 +13,8 @@ const Dialogs = (props) => {
     let messagesElement = state.messages.map(message => <Mess message={message.message} />);
     let newMessageBody = state.newMessageBody;
 
+    const navigate = useNavigate()
+
     let onSendMessageClick = () => {
         props.sendMessage();
     };
@@ -17,6 +22,11 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
+useEffect(() => {
+    if (!props.isAuth) {
+      navigate('/login');
+    }
+  }, [props.isAuth, navigate]);
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItem}>
