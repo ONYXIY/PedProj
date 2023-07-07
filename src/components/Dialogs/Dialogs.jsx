@@ -13,7 +13,7 @@ const Dialogs = (props) => {
     let messagesElement = state.messages.map(message => <Mess message={message.message} />);
     let newMessageBody = state.newMessageBody;
 
-    const navigate = useNavigate()
+    
 
     let onSendMessageClick = () => {
         props.sendMessage();
@@ -22,11 +22,7 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
-useEffect(() => {
-    if (!props.isAuth) {
-      navigate('/login');
-    }
-  }, [props.isAuth, navigate]);
+    
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItem}>
