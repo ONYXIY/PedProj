@@ -15,9 +15,24 @@ export const usersAPI = {
 
         }).then(response => response.data)
     },
+    
+    follow(userId){
+        return instance.post(instance.baseURL + `follow/${userId}`)
+    },
+    unfollow(userId){
+        return instance.delete(instance.baseURL +`follow/${userId}`)
+    }
+
+}
+export const profileAPI ={
     getProfile(userId) {
         return instance.get(`profile/` + userId)
             .then(response => response.data)
-    }
-
+    },
+}
+export const headerAPI ={
+    getAuth(){
+    return instance.get(instance.baseURL +`auth/me`,{
+  }).then(response => response.data)
+}
 }
