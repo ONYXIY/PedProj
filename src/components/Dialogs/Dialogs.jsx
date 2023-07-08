@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Mess from './Message/Message';
-import { useNavigate } from 'react-router-dom';
-
 
 
 const Dialogs = (props) => {
